@@ -1,52 +1,54 @@
  /*广告倒计时*/
-var adTop=document.getElementById('adTop');
-var adTopEm=adTop.getElementsByTagName('em')[0];
-var adTopII=adTop.getElementsByTagName('i')[0];
-function adClose(num){
-	num--;
-	if(num==9)
-		adTopEm.innerHTML='九';
-	else if(num==8)
-		adTopEm.innerHTML='八';
-	else if(num==7)
-		adTopEm.innerHTML='七';
-	else if(num==6)
-		adTopEm.innerHTML='六';
-	else if(num==5)
-		adTopEm.innerHTML='五';
-	else if(num==4)
-		adTopEm.innerHTML='四';
-	else if(num==3)
-		adTopEm.innerHTML='三';
-	else if(num==2)
-		adTopEm.innerHTML='二';
-	else if(num==1)
-		adTopEm.innerHTML='一';
-	else if(num==0)
-	{
-		adCloseDo(0);
-		return;
+(function(){
+	let adTop=document.getElementById('adTop');
+	let adTopEm=adTop.querySelector('em');
+	let adTopII=adTop.querySelector('i');
+	let timer=null;
+	let num=9;
+	
+	timer=window.setInterval(()=>{
+	  if(num<=0){
+		  adTop.classList.add("scrTop");
+		  clearInterval(timer);
+		  return
+	  }
+	  switch(num){
+		case 9:
+			adTopEm.innerHTML='九';
+			break;
+		case 8:
+			adTopEm.innerHTML='八';
+			break;		
+		case 7:
+			adTopEm.innerHTML='七';
+			break;	
+		case 6:
+			adTopEm.innerHTML='六';
+			break;	
+		case 5:
+			adTopEm.innerHTML='五';
+			break;
+		case 4:
+			adTopEm.innerHTML='四';
+			break;
+		case 3:
+			adTopEm.innerHTML='三';
+			break;
+		case 2:
+			adTopEm.innerHTML='二';
+			break;
+		case 1:
+			adTopEm.innerHTML='一';
+			break;
+	  }
+	  num--;
+	},1000)
+	adTopII.onclick=()=>{
+		clearInterval(timer);
+		num=0;
+		adTop.classList.add("scrTop");
 	}
-	return setTimeout(function(){adClose(num)},1000);
-}
-
-function adCloseDo(height){
-	height+=4;
-	if(height<=80)
-	{
-		adTop.style.marginTop=-height+'px';
-		return setTimeout(function(){adCloseDo(height);},20);
-	}
-	else
-	{
-		//adTop.parentNode.removeChild(adTop);
-	}
-}
-
-adClose(11);
-adTopII.onclick=function(){
-	adCloseDo(0);
-}
+})()
 
 
 /***************网站导航下拉菜单************************/

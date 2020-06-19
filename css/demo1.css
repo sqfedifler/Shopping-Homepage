@@ -12,7 +12,8 @@ body{font-size:14px; font-family:'宋体','微软雅黑'; color:#959595;}
 .clearFix:after{content:"."; display:block; height:0; clear:both; visibility:hidden;}
 
 /*顶部广告*/
-.adTop{ position:relative; z-index:5; width:100%; min-width:1190px; height:80px; overflow:hidden;}
+#adTop{position:relative; z-index:5; width:100%; min-width:1190px; height:80px; overflow:hidden; transition: all 2s;}
+#adTop.scrTop{ margin-top: -80px;}
 .adTop a{position:absolute;left:50%; top:0px; margin-left:-960px; width:1920px;height:80px;}
 .adTop span{position:absolute; top:9px; right:7px; z-index:88; width:118px; height:22px; padding-left:10px; line-height:22px; font-size:12px; color:#595959; background:url(../images/ad_xx.png) no-repeat #fff right top;}
 .adTop span i{ position:absolute; right:0px; top:0px; z-index:5; width:22px; height:22px; overflow:hidden; text-indent:-99em; cursor:pointer;}
