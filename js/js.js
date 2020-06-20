@@ -48,21 +48,27 @@
 		num=0;
 		adTop.classList.add("scrTop");
 	}
-})()
+})();
 
 
 /***************网站导航下拉菜单************************/
-var loginRegWebNav=document.getElementById('loginReg_webNav');
-var loginRegWebNavSpan=loginRegWebNav.getElementsByTagName('span')[0];
-var loginRegWebNavUl=loginRegWebNav.getElementsByTagName('ul')[0];
-loginRegWebNav.onmouseover=function(){
-	loginRegWebNavSpan.className="loginReg_webNav_cur";
-	loginRegWebNavUl.style.display='';
-}
-loginRegWebNav.onmouseout=function(){
-	loginRegWebNavSpan.className="";
-	loginRegWebNavUl.style.display='none';
-}
+(function(){
+	let loginRegWebNav=document.querySelector('#loginReg_webNav');
+	let loginRegWebNavSpan=loginRegWebNav.querySelector('span');
+	let loginRegWebNavUl=loginRegWebNav.querySelector('ul');
+	loginRegWebNav.onmouseover=function(){
+		loginRegWebNavSpan.classList.add('loginReg_webNav_cur');
+		loginRegWebNavUl.style.display="";
+	}
+	loginRegWebNav.onmouseout=function(){
+		loginRegWebNavSpan.classList.remove('loginReg_webNav_cur');
+		loginRegWebNavUl.style.display="none";
+	}
+})();
+
+
+
+
 
 /***************城市选择***********************/
 var areaAll=document.getElementById('areaAll');
