@@ -301,7 +301,7 @@ body{font-size:14px; font-family:'宋体','微软雅黑'; color:#959595;}
 .search_fixed{position:fixed; _position:absolute; left:50%; top:0px; margin-left:-595px; _top:expression(eval('document.documentElement.scrollTop')); width:1190px; height:44px; background:url(../images/search_fixed.png) no-repeat; z-index:9999999;}
 .search_fixed .search_main{position:absolute;  margin:6px 0px 0px 0px; padding-left:233px;}
 /*客服*/
-.kefu{position:fixed; _position:absolute; left:50%; top:345px; margin-left:595px;_top:expression(eval('document.documentElement.scrollTop')); width:58; height:auto; z-index:999;}
+.kefu{position:fixed; _position:absolute; left:50%; top:345px; margin-left:595px; width:58; height:auto; z-index:999;}
 .kefu a{display:block; width:58px; height:58px; background:url(../images/kefu_btn.png) no-repeat; overflow:hidden; margin-bottom:3px; text-indent:-99em;}
 .kefu a.kefu_1{background-position:0px 0px;}
 .kefu a.kefu_1:hover{background-position:0px -247px;}

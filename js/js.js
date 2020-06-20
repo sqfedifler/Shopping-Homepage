@@ -461,13 +461,34 @@ function trim(str){ //删除左右两端的空格
 	}
 })();
 
-/*客服*/
+/*客服返回到页面顶部*/
 (function(){
-  var kefu=document.getElementById('kefu');
-  var backup_btn=kefu.getElementsByTagName('a')[3];
-    backup_btn.onclick=function(){
-		document.body.scrollTop=document.documentElement.scrollTop=0;
-	
+  let kefu=document.querySelector('#kefu');
+  let backup_btn=kefu.getElementsByTagName('a')[3];
+  kefu.timer=null
+ backup_btn.onclick=function(){
+	 console.log('11')
+	MoveScroll(0)
+ }
+ function MoveScroll(num){
+	 cancelAnimationFrame(kefu.timer);
+	 let scroTop=document.documentElement.scrollTop||document.body.scrollTop;
+	 let speed;
+
+	 kefu.timer=requestAnimationFrame(Move)
+
+	 function Move(){
+        if(Math.abs(scroTop-num)<2){
+		   document.documentElement.scrollTop=document.body.scrollTop=num
+           cancelAnimationFrame(kefu.timer)
+		}else{
+			//不是匀速上升，有缓冲效果
+		   speed=(num-scroTop)/12;
+		   scroTop+=speed;
+		   document.documentElement.scrollTop=document.body.scrollTop=scroTop;
+		   kefu.timer=requestAnimationFrame(Move)
+		}
+	 }
  }	  
 
 })();
