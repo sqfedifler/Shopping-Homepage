@@ -70,7 +70,7 @@
 
 
 
-/***************城市选择*************************/
+/***************城市选择***************************/
 var areaAll=document.getElementById('areaAll');
 var areaUls=areaAll.getElementsByTagName('ul');
 var areaLis=areaUls[1].getElementsByTagName('li');
